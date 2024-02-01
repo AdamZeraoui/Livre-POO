@@ -8,12 +8,14 @@ class Livre{
     private float $price;
     private Auteur $auteur;
 
-    public function __construct($title,$year,$pages,$price){
+    public function __construct(string $title, string $year,int $pages,float $price,Auteur $auteur){
         
         $this->title = $title;
         $this->year = new DateTime($year); //ne pas oublier de déclarer le ew DateTime dans le construct ! 
         $this->pages = $pages;
         $this->price = $price;
+        $this->auteur = $auteur;
+        $this->auteur->addLivre($this);
     }
         
     public function getTitle(){
@@ -48,8 +50,19 @@ class Livre{
         $this->price = $price;
     }
 
+    public function getAuteur(): Auteur {
+        return $this->auteur;
+    }
+
+
+    public function setAuteur(Auteur $auteur): self {
+        $this->auteur = $auteur;
+        return $this;
+    }
     public function __toString(){
         return $this->getTitle().' '.$this->year->format('Y').' :'.$this->getPages().' pages/'.$this->getPrice().'€';
     }
+
+
 
 }
