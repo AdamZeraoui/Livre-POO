@@ -6,14 +6,10 @@ spl_autoload_register(function($class){ //permet d'indiquer le chemin des classe
     require 'classes/'.$class.'.php';
 });
 
-$steph = new Auteur("Stephen","King");
-$livre1 = new Livre("Ca","1986",1138,20, $steph);
-$livre2 = new Livre("Simetierre","1983",374,15,$steph);
-$livre3 = new Livre("Le Fléau","1978",823,14,$steph);
-$livre4 = new Livre("Shining","1977",447,16,$steph);
+$steph = new Auteur('Stephen','King');
+$ca = new Livre('Ca',1986,1138,20,$steph);
+$simetierre = new Livre("Simetierre",1983,374,15,$steph);
+$leFleau = new Livre ("Le Fléau",1978,823,14,$steph);
+$shining = new Livre ("Shining",1977,477,16,$steph);
 
-
-echo 'Livre de '.$steph->__toString().'<br><br>';
-echo $livre->__toString();
-
-var_dump($steph);
+echo $steph->afficherBibliographie();
