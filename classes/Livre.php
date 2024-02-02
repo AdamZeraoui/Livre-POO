@@ -42,7 +42,7 @@ class Livre{ //Equivalent Employe
         $this->pages = $pages;
     }
 
-    public function getPrice(){
+    public function getPrice(): float {
         return $this->price;
     }
 
@@ -61,7 +61,7 @@ class Livre{ //Equivalent Employe
 
 
     public function __toString(){
-        return $this->getTitle().' '.$this->year->format('Y').' :'.$this->getPages().' pages/'.$this->getPrice().'€';
+        return $this->getTitle().' '.$this->year->format('(Y)').' : '.$this->getPages().' pages/'.$this->getPrice().'€';
     }
 
 
