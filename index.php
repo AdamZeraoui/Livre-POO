@@ -2,9 +2,6 @@
 
 <?php
 
-spl_autoload_register(function($class){ //permet d'indiquer le chemin des classes utiliser.
-    require 'classes/'.$class.'.php';
-});
 
 $steph = new Auteur('Stephen','King');
 $ca = new Livre('Ca',1986,1138,20,$steph);
